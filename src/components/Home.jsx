@@ -1,7 +1,17 @@
-const Home = () => {
+const Home = ({ posts }) => {
   return (
-    <div className="text-6xl">Home</div>
-  )
-}
+    <div>
+      <h2>Welcome to the Blog</h2>
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <strong>{post.title}</strong>
+            <p>{post.content}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
